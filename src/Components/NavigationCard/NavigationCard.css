@@ -1,9 +1,7 @@
 :root{
-  --box-shadow-values: -3px 3px 10px 0px rgb(0 72 12 / 12%), 2px 5px 18px 0px rgb(0 139 41 / 10%);
+  /* --box-shadow-values: -3px 3px 10px 0px rgb(0 72 12 / 12%), 2px 5px 18px 0px rgb(0 139 41 / 10%); */
+  --box-shadow-values: -3px 3px 10px 0px rgba(60,64,67,0.16), 2px 5px 18px 0px rgba(60,64,67,0.16);
   --card-border-radius: 10px;
-  /* --card-width: 40vw; */
-  /* --card-width: 100%; */
-  --card-width: -webkit-fill-available;
   --card-padding: 16px;
 }
 
@@ -12,7 +10,6 @@
   flex-direction: column;
   text-decoration: none;
   background-color: white;
-  width: var(--card-width);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
   word-wrap: break-word;  
@@ -20,13 +17,15 @@
 }
 .navigation-card:hover, .navigation-card:focus{
   outline: none;
-  transform: scale(1.1, 1.1);
+  /* transform: scale(1.05, 1.05); */
   box-shadow: var(--box-shadow-values);
 }
 .navigation-card>img{
  width: 100%;
- border-radius: var(--card-border-radius) var(--card-border-radius) 0px 0px;
+ border-radius: var(--card-border-radius);
 }
 .navigation-card>h2{
   color: black;
+  font-size: larger;
+  font-weight: 400;
 }

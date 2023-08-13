@@ -1,6 +1,6 @@
 :root{
   --flex-gap: 20px;
-  --container-padding: 16px;
+  --container-padding: 20px;
   --mainpage-main-width: 40vw;
 }
 
@@ -21,19 +21,22 @@
   text-align: center;
 }
 .mainpage-main>main{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  flex-shrink: 1;
+  display: grid;
+  grid-template-columns: auto auto auto;
   align-items: center;
   justify-content: center;
-  width: var(--mainpage-main-width);
+  width: 100%;
   max-width: 100%;
   gap: var(--flex-gap);
 }
 
 @media screen and (max-width: 915px) {
   .mainpage-main>main{
-    width: 100%;
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (max-width: 450px) {
+  .mainpage-main>main{
+    grid-template-columns: auto;
   }
 }
