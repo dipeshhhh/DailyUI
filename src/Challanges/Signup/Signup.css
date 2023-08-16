@@ -1,0 +1,63 @@
+/* *{border: 2px solid black;} */
+:root{
+  --dc-background: rgb(49,51,56);
+  --dc-input-background: rgb(30,31,34);
+  --dc-foreground: rgb(242,243,245);
+  --dc-input-foreground: rgb(202,204,208);
+}
+
+.signup-main{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.signup-main>section{
+  padding: 32px;
+  border-radius: 10px;
+  background-color: var(--dc-background);
+  color: var(--dc-foreground);
+  /* animation: slideLeft 1s infinite; */
+}
+.signup-main>section, .signup-main>section>form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+.signup-main>section>form{
+  gap: 1em;
+}
+.two-input-one-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+.form-input{
+  background-color: var(--dc-input-background);
+  color: var(--dc-input-foreground);
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  line-height: 32px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+.form-input:focus{
+  outline: 4px solid skyblue;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  100% {
+    transform: translateX(200px) scaleX(0);
+  }
+} 
