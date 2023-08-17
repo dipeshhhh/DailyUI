@@ -1,37 +1,50 @@
-/* *{border: 2px solid black;} */
-:root{
-  --dc-background: rgb(49,51,56);
-  --dc-input-background: rgb(30,31,34);
-  --dc-foreground: rgb(242,243,245);
-  --dc-input-foreground: rgb(202,204,208);
+:root {
+  --dc-background: rgb(49, 51, 56);
+  --dc-input-background: rgb(30, 31, 34);
+  --dc-input-light-background: rgb(101, 101, 112);
+  --dc-foreground: rgb(242, 243, 245);
+  --dc-input-foreground: rgb(202, 204, 208);
 }
 
-.signup-main{
+.signup-main {
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: relative
 }
-.signup-main>section{
+
+.signup-main>section {
   padding: 32px;
   border-radius: 10px;
   background-color: var(--dc-background);
   color: var(--dc-foreground);
-  /* animation: slideLeft 1s infinite; */
+  gap: 32px;
+  position: absolute;
+  /* inset: 0; */
 }
-.signup-main>section, .signup-main>section>form{
+
+.signup-main>section>h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.signup-main>section,
+.signup-main>section>form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 400px !important;
 }
-.signup-main>section>form{
+
+.signup-main>section>form {
   gap: 1em;
 }
-.two-input-one-row{
+
+.two-input-one-row {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,7 +52,9 @@
   gap: 16px;
   width: 100%;
 }
-.form-input{
+
+.form-input,
+.form-submit-button {
   background-color: var(--dc-input-background);
   color: var(--dc-input-foreground);
   border: none;
@@ -48,16 +63,187 @@
   line-height: 32px;
   padding: 4px 8px;
   box-sizing: border-box;
-}
-.form-input:focus{
-  outline: 4px solid skyblue;
+
+  isolation: isolate;
+  position: relative;
 }
 
-@keyframes slideLeft {
+.form-input:focus,
+.form-submit-button:focus {
+  outline: none;
+}
+
+.form-input::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-bottom: 4px solid var(--dc-input-light-background);
+  border-radius: 4px;
+
+  scale: 0 1;
+  transition: scale 450ms;
+}
+
+.form-input:hover::after,
+.form-input:focus-within::after {
+  scale: 1 1;
+}
+
+.form-submit-button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.form-submit-button::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: var(--dc-input-light-background);
+  border-radius: 4px;
+  inset: 0;
+
+  scale: 0 1;
+  /* transform-origin: right; */
+  transition: scale 450ms;
+}
+
+.form-submit-button:hover::after,
+.form-submit-button:focus-visible::after {
+  /* transform-origin: left; */
+  scale: 1 1;
+}
+
+.signup-main>section>a {
+  color: var(--dc-input-foreground);
+  text-decoration: none;
+  font-size: 0.9rem;
+
+  isolation: isolate;
+  position: relative;
+}
+
+.signup-main>section>a:focus {
+  outline: none;
+}
+
+.signup-main>section>a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-bottom: 2px solid var(--dc-input-light-background);
+
+  scale: 0 1;
+  transition: scale 450ms;
+}
+
+.signup-main>section>a:hover::after,
+.signup-main>section>a:focus-visible::after {
+  scale: 1 1;
+}
+
+@keyframes slideLeftDisplayNone {
   0% {
-    transform: translateX(0) scaleX(1);
+    display: flex;
+    transform: scale(1);
+    transform-origin: left;
   }
+
   100% {
-    transform: translateX(200px) scaleX(0);
+    display: none;
+    transform: scale(0);
+    transform-origin: left;
   }
-} 
+}
+
+@keyframes slideLeftDisplayInitial {
+  0% {
+    display: none;
+    transform: scale(0);
+    transform-origin: right;
+  }
+
+  100% {
+    display: flex;
+    transform: scale(1);
+    transform-origin: right;
+  }
+}
+
+@keyframes slideRightDisplayNone {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+    display: flex;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+    display: none;
+  }
+}
+
+@keyframes slideRightDisplayInitial {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+    display: none;
+  }
+
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+    display: flex;
+  }
+}
+
+.slide-left-display-none-animation {
+  animation: slideLeftDisplayNone 1s forwards;
+  display: none;
+}
+
+.slide-left-display-initial-animation {
+  animation: slideLeftDisplayInitial 1s forwards;
+  display: initial;
+}
+
+.slide-right-display-none-animation {
+  animation: slideRightDisplayNone 1s forwards;
+  display: none;
+}
+
+.slide-right-display-initial-animation {
+  animation: slideRightDisplayInitial 1s forwards;
+  display: initial;
+}
+
+@media screen and (max-width: 500px) {
+  .signup-main>section{
+    padding: 32px 0px !important;
+  }
+  .signup-main>section,
+  .signup-main>section>form{
+    width: 90% !important;
+  }
+}
+@media screen and (max-height: 500px) {
+  .signup-main{
+    overflow-y: scroll !important;
+    padding: 50% 0px;
+  }
+}
+@media screen and (max-height: 260px) {
+  .signup-main{
+    overflow-y: scroll !important;
+    padding: 80% 0px;
+  }
+}
+@media screen and (max-height: 120px) {
+  .signup-main{
+    overflow-y: scroll !important;
+    padding: 100% 0px;
+  }
+}
+/* Learned: position absolute on animation, pseudo elements */
