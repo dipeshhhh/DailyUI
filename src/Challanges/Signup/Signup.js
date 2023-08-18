@@ -33,7 +33,7 @@ function Signup() {
 
   return (
     <div className="signup-main">
-      <section className={!isFirstLoad && (isLoginActive ? 'slide-left-display-initial-animation' : 'slide-left-display-none-animation')}>
+      <section className={!isFirstLoad && (isLoginActive ? 'slide-right-display-initial-animation' : 'slide-left-display-none-animation')}>
         <h2>Login</h2>
         <form>
           <div className="form-input"><input className="form-input" type="email" placeholder='Email' name='email' ref={inputRef} autoFocus /></div>
@@ -42,7 +42,7 @@ function Signup() {
         </form>
         <a href='' onClick={switchToRegister}>New here? Register now!</a>
       </section>
-      <section className={!isFirstLoad && (!isLoginActive ? 'slide-left-display-initial-animation' : 'slide-left-display-none-animation')}>
+      <section className={!isFirstLoad && (!isLoginActive ? 'slide-left-display-initial-animation' : 'slide-right-display-none-animation')}>
         <h2>Signup</h2>
         <form>
           <section className="two-input-one-row">
