@@ -1,0 +1,7 @@
+.credit-card-checkout-main{
+  height: 100%;
+  width: 100%;
+}
+.credit-card-checkout-main>img{
+  width: 100% !important;
+}
