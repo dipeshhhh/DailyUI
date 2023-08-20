@@ -4,7 +4,7 @@ import './CreditCardCheckout';
 function CreditCardCheckout() {
   return(
     <div className='credit-card-checkout-main'>
-      <img src={require('../../Images/under_construction.png')} width='100%' height='auto' />
+      <img src={require('../../Images/under_construction.png')} width='100vw' height='auto' />
     </div>
   )
 }
