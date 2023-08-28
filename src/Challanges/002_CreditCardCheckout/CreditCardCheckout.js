@@ -1,5 +1,5 @@
 import React from 'react';
-import './CreditCardCheckout';
+import './CreditCardCheckout.css';
 
 function CreditCardCheckout() {
 
@@ -34,9 +34,9 @@ function CreditCardCheckout() {
           (<table>
             <thead>
               <tr>
-                <td>Item</td>
-                <td>Qty.</td>
-                <td>Price x Qty.</td>
+                <th>Item</th>
+                <th>Qty.</th>
+                <th>Price x Qty.</th>
               </tr>
             </thead>
             <tbody>
@@ -64,7 +64,71 @@ function CreditCardCheckout() {
             - position fixed to the top right section (i.e. stays there)
       */}
       <section className='credit-card-box'>
-
+        <form className='credit-card-input'>
+          <section>
+            <div id='credit-card-number-input-box'>
+              <input
+                id='credit-card-number-part-1'
+                name='credit-card-number'
+                type='number'
+                size='4'
+                maxLength='4'
+                required
+              />
+              <input
+                id='credit-card-number-part-2'
+                name='credit-card-number'
+                type='number'
+                size='4'
+                maxLength='4'
+                required
+              />
+              <input
+                id='credit-card-number-part-3'
+                name='credit-card-number'
+                type='number'
+                size='4'
+                maxLength='4'
+                required
+              />
+              <input
+                id='credit-card-number-part-4'
+                name='credit-card-number'
+                type='number'
+                size='4'
+                maxLength='4'
+                required
+              />
+            </div>
+            <div id='credit-card-expiry-date-input-box'>
+              <label for='credit-card-expiry-date'>VALID THRU</label>
+              <input
+                id='credit-card-expiry-date'
+                type='number'
+                required
+              />
+            </div>
+            <div id='credit-card-holder-name-input-box'>
+              <label for='credit-card-holder-name'>CARD HOLDER's NAME</label>
+              <input
+                id='credit-card-holder-name'
+                type='text'
+                placeholder='CARD HOLDER NAME'
+                required
+              />
+            </div>
+            <div id='credit-card-cvv-input-box'>
+              <label for='credit-card-cvv'>CVV</label>
+              <input
+                id='credit-card-cvv'
+                type='number'
+                placeholder='CVV'
+                required
+              />
+            </div>
+          </section>
+          <button type='submit' > Pay </button>
+        </form>
       </section>
     </div>
   )

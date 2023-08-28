@@ -1,4 +1,9 @@
 .credit-card-checkout-main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
   height: 100%;
   width: 100%;
 }
