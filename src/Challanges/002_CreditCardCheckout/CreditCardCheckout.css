@@ -1,4 +1,4 @@
-.credit-card-checkout-main{
+.credit-card-checkout-main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -6,4 +6,54 @@
   gap: 32px;
   height: 100%;
   width: 100%;
+  padding: 32px;
+}
+
+.credit-card-bill-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  isolation: isolate
+}
+
+.credit-card-bill-box::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent 33.333%,
+    white 33.333%,
+    white 66.667%,
+    transparent 66.667%
+  ),
+  linear-gradient(
+    -45deg,
+    transparent 33.333%,
+    white 33.333%,
+    white 66.667%,
+    transparent 66.667%
+  );
+  background-size: contain;
+}
+
+.credit-card-bill-box * {
+  box-sizing: border-box;
+}
+
+/* .credit-card-bill-table { */
+  /* border-spacing: 16px; */
+/* } */
+
+.credit-card-bill-table>tbody>tr>td {
+  padding: 0.25ch 1ch;
+}
+
+.credit-card-bill-table>thead>tr>th,
+.credit-card-bill-table>tfoot>tr>th {
+  text-align: start;
+  padding: 1.75ch 1ch;
 }
