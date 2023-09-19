@@ -71,89 +71,45 @@ function CreditCardCheckout() {
       {/* A credit card shaped box for entering credit card info
             - position fixed to the top right section (i.e. stays there)
       */}
-      {/* <section className='credit-card-box'>
+      <section className='credit-card-box'>
         <form className='credit-card-input'>
           <section>
-            <div id='credit-card-number-input-box'>
+            <fieldset id='credit-card-number-input-box'>
+              <legend for='credit-card-number'>Card No.</legend>
               <input
-                id='credit-card-number-part-1'
-                name='credit-card-number'
-                className='credit-card-number'
-                type='text'
-                size='4'
-                maxLength='4'
-                pattern='[0-9]{4}'
-                inputMode='numeric'
-                onInput={handleCreditCardInput}
+                id='credit-card-number'
+                type='number'
                 required
-              />
-              <input
-                id='credit-card-number-part-2'
-                name='credit-card-number'
-                className='credit-card-number'
-                type='text'
-                size='4'
-                maxLength='4'
-                pattern='[0-9]{4}'
-                inputMode='numeric'
-                onInput={handleCreditCardInput}
-                required
-              />
-              <input
-                id='credit-card-number-part-3'
-                name='credit-card-number'
-                className='credit-card-number'
-                type='text'
-                size='4'
-                maxLength='4'
-                pattern='[0-9]{4}'
-                inputMode='numeric'
-                onInput={handleCreditCardInput}
-                required
-              />
-              <input
-                id='credit-card-number-part-4'
-                name='credit-card-number'
-                className='credit-card-number'
-                type='text'
-                size='4'
-                maxLength='4'
-                pattern='[0-9]{4}'
-                inputMode='numeric'
-                onInput={handleCreditCardInput}
-                required
-              />
-            </div>
-            <div id='credit-card-expiry-date-input-box'>
-              <label for='credit-card-expiry-date'>VALID THRU</label>
+              />              
+            </fieldset>
+            <fieldset id='credit-card-expiry-date-input-box'>
+              <legend for='credit-card-expiry-date'>Valid Thru</legend>
               <input
                 id='credit-card-expiry-date'
                 type='number'
                 required
               />
-            </div>
-            <div id='credit-card-holder-name-input-box'>
-              <label for='credit-card-holder-name'>CARD HOLDER's NAME</label>
+            </fieldset>
+            <fieldset id='credit-card-holder-name-input-box'>
+              <legend for='credit-card-holder-name'>Card Holder's Name</legend>
               <input
                 id='credit-card-holder-name'
                 type='text'
-                placeholder='CARD HOLDER NAME'
                 required
               />
-            </div>
-            <div id='credit-card-cvv-input-box'>
-              <label for='credit-card-cvv'>CVV</label>
+            </fieldset>
+            <fieldset id='credit-card-cvv-input-box'>
+              <legend for='credit-card-cvv'>CVV</legend>
               <input
                 id='credit-card-cvv'
                 type='number'
-                placeholder='CVV'
                 required
               />
-            </div>
+            </fieldset>
           </section>
           <button type='submit' > Pay </button>
         </form>
-      </section> */}
+      </section>
     </div>
   )
 }
