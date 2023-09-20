@@ -4,6 +4,7 @@
   --bill-padding: 32px;  
   --credit-card-checkout-box-shadow-values: -3px 3px 10px 0px rgba(60,64,67,0.16), 2px 5px 18px 0px rgba(60,64,67,0.16);
   --credit-card-input-gap: 16px;
+  --credit-card-input-padding: 16px;
 
   --zigzag-border-height: 20px;
 }
@@ -111,15 +112,22 @@
   border-right: none;
 }
 
-.credit-card-input,
-.credit-card-input>section{
+.credit-card-form,
+.credit-card-input-box{
   display: flex;
   flex-direction: column;
   gap: var(--credit-card-input-gap)
 }
 
+.credit-card-input-box{
+  border: 2px solid black;
+  border-radius: var(--credit-card-input-padding);
+  padding: var(--credit-card-input-padding);
+}
+
 fieldset{
   border: none;
+  font-size: small;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

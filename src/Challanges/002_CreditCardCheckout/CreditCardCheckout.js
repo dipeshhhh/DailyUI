@@ -72,13 +72,14 @@ function CreditCardCheckout() {
             - position fixed to the top right section (i.e. stays there)
       */}
       <section className='credit-card-box'>
-        <form className='credit-card-input'>
-          <section>
+        <form className='credit-card-form'>
+          <section className='credit-card-input-box'>
             <fieldset id='credit-card-number-input-box'>
               <legend for='credit-card-number'>Card No.</legend>
               <input
                 id='credit-card-number'
                 type='number'
+                className='credit-card-input'
                 required
               />              
             </fieldset>
@@ -87,6 +88,7 @@ function CreditCardCheckout() {
               <input
                 id='credit-card-expiry-date'
                 type='number'
+                className='credit-card-input'
                 required
               />
             </fieldset>
@@ -95,6 +97,7 @@ function CreditCardCheckout() {
               <input
                 id='credit-card-holder-name'
                 type='text'
+                className='credit-card-input'
                 required
               />
             </fieldset>
@@ -103,6 +106,7 @@ function CreditCardCheckout() {
               <input
                 id='credit-card-cvv'
                 type='number'
+                className='credit-card-input'
                 required
               />
             </fieldset>
