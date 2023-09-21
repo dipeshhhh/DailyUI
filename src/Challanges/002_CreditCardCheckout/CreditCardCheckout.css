@@ -120,14 +120,20 @@
 }
 
 .credit-card-input-box{
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: var(--credit-card-input-padding);
   padding: var(--credit-card-input-padding);
+  box-shadow: var(--credit-card-checkout-box-shadow-values);
+  width: 300px;
 }
 
 fieldset{
   border: none;
   font-size: small;
+}
+
+.credit-card-input{
+  width: 100%;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
