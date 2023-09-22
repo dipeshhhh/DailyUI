@@ -5,7 +5,7 @@ function CreditCardCheckout() {
 
   const handleCreditCardInput = (event) => {
     const input = event.target;
-    const formattedInput = input.value.replace(/\D/g, '').slice(0, 4);
+    let formattedInput = input.value.slice(0, 16);
     input.value = formattedInput;
   }
 
@@ -76,10 +76,12 @@ function CreditCardCheckout() {
           <section className='credit-card-input-box'>
             <fieldset id='credit-card-number-input-box'>
               <legend for='credit-card-number'>Card No.</legend>
+              {/* Need to make 4 input fields here */}
               <input
                 id='credit-card-number'
                 type='number'
                 className='credit-card-input'
+                onChange={handleCreditCardInput}
                 required
               />              
             </fieldset>

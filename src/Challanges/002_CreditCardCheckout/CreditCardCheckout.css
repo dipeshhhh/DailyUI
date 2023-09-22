@@ -130,10 +130,27 @@
 fieldset{
   border: none;
   font-size: small;
+  position: relative;
+  isolation: isolate;
+}
+fieldset::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  scale: 0 1;
+  z-index: -1;
+  transition: scale 450ms;
+}
+fieldset:hover::after,
+fieldset:focus-within::after{
+  scale: 1 1;
 }
 
 .credit-card-input{
   width: 100%;
+  background-color: transparent;
+  border: none;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
